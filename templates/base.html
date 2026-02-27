@@ -1,0 +1,320 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    
+    <style>
+    .bg-mycolor1
+    {
+        background: #f50057;
+    }
+    .bg-mycolor2
+    {
+        background: #6a1b9a;
+    }
+    .text-mycolor1
+    {
+        color: #f50057;
+    }
+    .text-mycolor2
+    {
+        color: #6a1b9a ;
+    }
+    .ic
+    {
+        color: #f50057;
+        height: 28px;
+        width: 28px;
+        text-align: center;
+        line-height: 28px;
+        border: 1px solid #f50057;
+        transition: .4s;
+    }
+    .ic:hover
+    {
+       transform:translateY(-5px);
+       transition: .1s;
+       background: #f50057;
+       color: white;
+    }
+    #menu
+    {
+        background: transparent !important;
+    }
+    #menu ul li a
+    {
+       color: white !important;
+    }
+    .slider
+    {
+     min-height: 300px;
+     background: linear-gradient(45deg,rgba(0,0,0,.3),rgba(245,0,87,.6)) ,url("{% static 'images/sl1.jpg' %}");
+     background-size: cover;
+     background-attachment: fixed;
+    }
+    .aboutcontent    
+    {
+     font-size: 18px;
+
+    }
+    .imgpic
+    {
+      height: 150px;
+      transition: 2s;
+      width: 100%;
+    }
+    .imgpic:hover
+    {
+      transform:scale(1.1);
+      transition: 1s;
+    }
+    .ufooter
+    {
+      min-height: 250px;
+      background: black;
+    }
+    .bfooter
+    {
+      height: 50px;
+      background: black;
+    }
+    .imgteam
+    {
+      height: 300px;    
+    }
+    .imgabout
+    {
+      height: 300px;
+    }
+    .catic
+    {
+      height: 60px;
+      width: 60px;
+      font-size: 30px;
+      border: 1px solid black;
+      border-radius: 75px;
+      line-height: 60px;
+    }
+    .catic:hover
+    {
+      background: red;
+      color: white;
+      transition: 2s;
+    }
+    .catimg
+    {
+      height: 155px;
+      
+    }
+    .popularcat
+    {
+      border: 0px;
+     
+      
+    }
+    .popularcat:hover
+    {
+      transform: scale(1.09);
+      transition: 2s;
+      
+    }
+    .txt
+    {
+      height: 50px;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 4px solid #f50057 !important;
+    }
+    .ta
+    {
+      height: 80px;
+      border-radius: 0px !important;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 4px solid #f50057 !important;
+    }
+    ::placeholder
+    {
+      color: #f50057 !important;
+    }
+    .btn
+    {
+      height: 50px !important;
+      color: white !important;
+    }
+    .login
+    {
+      background: rgba(255,255,255,.6);
+    }
+    .contact
+    {
+      background: rgba(51,50,50,.4);
+    }
+    .d1
+    {
+      min-height: 500px;
+      width: 600px;
+      text-align: center;
+      margin-left: 280px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      line-height:50px;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    .bgcontact{
+      background-image:url(" {% static 'images/pi.jpeg'  %} ");
+      background-repeat:no-repeat;
+      background-size: contain;
+
+    }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--start header-->
+    <div class="row header">
+       
+        <div class="col-sm-11 pt-4">
+            <div class="row">
+                <div class="col-sm-2 ms-2  ps-2">
+                    <div class="fs-2">Smart<b class="text-mycolor1">Study
+                      <i class="fa-solid fa-graduation-cap"></i>
+                    </b> </div>
+                </div>
+                <div class="col-sm-3 me-3 ps-3"> 
+                    <i class="fa-solid fa-envelope ic"></i> <b>Mail Us <br></b>
+                     <p class="text-mycolor1">asthagautamastha@gmail.com</p>
+                </div>
+                <div class="col-sm-3 ms-2 ">
+                <i class="fa-solid fa-phone ic"></i> <b>Contact Us</b><br>
+                    <p class="text-mycolor1"> +91 9369520683</p> 
+                </div>
+                <div class="col-sm-3 ms-3 pt-2">
+                   <i class="fa-brands fa-instagram ic"></i> 
+                   <i class="fa-brands fa-facebook ic"></i> 
+                   <i class="fa-brands fa-whatsapp ic"></i>
+                   <i class="fa-brands fa-telegram ic"></i>
+                   <i class="fa-brands fa-linkedin ic"></i>
+                   <i class="fa-brands fa-twitter ic"></i>
+                    <!--media logo   .c-->
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <!--end header-->
+
+    <!--start menu-->
+    <div class="row menu bg-mycolor1">
+        <div class="col-sm-9 mx-auto">
+         <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menu">
+  <div class="container-fluid">
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index/"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutus/"><i class="fa-solid fa-circle-user"></i>About </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register/"><i class="fa-solid fa-circle-user"></i> Register</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/services/"><i class="fa-solid fa-server"></i> Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/gallery/"><i class="fa-solid fa-image"></i> Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/team/"><i class="fa-solid fa-users"></i> Team</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/contactus/"><i class="fa-solid fa-phone-volume"></i> ContactUs</a>
+        </li>
+      
+        
+        <li class="nav-item">
+          <a class="nav-link"><i class="fa-solid fa-comment-dots "></i> Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login/"><i class="fa-solid fa-right-to-bracket"> </i>Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+        </div>
+    </div>
+    <!--end   menu-->
+  <div class="row">
+    <div class="col-sm-12" style="min-height: 500px;">
+         
+    {% block content %}
+
+    {% endblock %} 
+   </div>
+  </div>
+    <div class="row ufooter">
+      <div class="col-sm-10 mx-auto">
+        <div class="row p-4">
+          <div class="col-sm-3 text-light">
+            <h5>About Website</h5>
+            <P style=" color: aliceblue; font-size:12px;">At the heart of our e-learning platform is a bold vision—to transform the 
+way people learn, grow, and succeed. In a world that's constantly evolving, 
+we believe education should be flexible, personalized, and inspiring. That’s 
+why we’ve created a dynamic digital space where learners of all 
+backgrounds can connect with skilled instructors, dive into interactive 
+online classes, tackle real-world home projects,</P>
+          </div>
+          <div class="col-sm-3">
+            <div class="row text-light ps-3">
+            <p><i class="fa-solid fa-arrow-right"></i> Home</p>
+            <p><i class="fa-solid fa-arrow-right"></i> About Us</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Our Team</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Our Services</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Contact Us</p>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="row text-light ps-3">
+            <p><i class="fa-solid fa-arrow-right"></i> Home</p>
+            <p><i class="fa-solid fa-arrow-right"></i> About Us</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Our Team</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Our Services</p>
+            <p><i class="fa-solid fa-arrow-right"></i> Contact Us</p>
+            </div>
+          </div>
+          
+          <div class="col-sm-3 text-light">
+          <h5>GET  IN TOUCH</h5>
+           <p><i class="fa-solid fa-location-dot"></i> Lakhimpur up, Uttar Pradesh 262701</p>
+           <p><i class="fa-solid fa-phone"></i> +91 9369520683</p>
+           <p><i class="fa-solid fa-phone"></i> +91 9044298812</p>
+          
+           </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="row bfooter text-light  text-center">
+      <span style="line-height: 50px;">Developed by Astha Gautam &copy;<a href="https://www.techpile.in" target="_blank">Techpile technology</a> </span>
+    </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    
+</body>
+</html>

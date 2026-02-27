@@ -1,0 +1,49 @@
+{% extends 'student_base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%  if not request.session.email %}
+<script>
+alert("You have to login first");location.href="/login/"
+</script>
+{% endif %}
+<div class="row heading">
+    <div class="text-center fs-3">E-<b>Notes<i class="fa-solid fa-layer-group"></i></b> 
+         <hr class="w-25 mx-auto">✅ Expert-Led Online Courses<br>
+         High-quality, on-demand courses 
+   
+    </div> 
+</div>
+<!--heading end-->
+<div class="row">
+    <div class="col-sm-10  shadow-lg p-4 mx-auto">
+      <div class="row">
+        {% for r in notes  %}
+        <!--start notes card-->
+        <div class="col-sm-6">
+        <div class="card mb-3 border-0 shadow-lg my-2">
+  <div class="row g-0">
+    <div class="col-md-4">
+        <img src="{% static 'images/ducpic.jpg'%}" class="img-fluid p-4"> 
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ r.title}}</h5>
+        <p class="card-text">{{r.notes_info}}</p>
+        <p class="card-text"><small class="text-body-secondary"><i class="fa-solid fa-calendar "></i> Posted Date : {{r.posted_date}}</small>
+        <span class="btn text-light float-end bg-mycolor2 "> <i class="fa-solid fa-download"></i><a href="/{{r.notesfile}}" >Download</a></span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+         <!--end notes card-->
+       {% endfor %}
+      </div>
+
+    </div>
+</div>
+
+{% endblock %}

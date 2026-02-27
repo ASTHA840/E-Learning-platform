@@ -1,0 +1,79 @@
+{% extends 'student_base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%  if not request.session.email %}
+<script>
+alert("You have to login first");location.href="/login/"
+</script>
+{% endif %}
+{% for r in userinfo %}
+ <style>
+  .profileimg
+  {
+    height: 150px;
+    border-radius: 75px;
+    width: 150px;
+    background: #f3f3f3;
+    border: 1px solid black;
+  }
+   .username
+  {
+   margin-top:100px;
+  }
+
+ </style>
+<div class="row py-2">
+   <p class="fs-3 text-center" >User <b class="text-mycolor1">Profile</b></p>
+   <div class="col-sm-12 mx-auto" >
+     <div class="row py-3">
+       <div class="col-sm-7 mx-auto">
+        <div class="card p-3 position-relative shadow-lg rounded-3 mt-5 border border-0" style="height: 500px;">
+        <img src=" {% static 'images/pic.jpeg' %}" alt="" class="img-fluid profileimg  position-absolute top-0 start-50 border-dark border-5 translate-middle"style="min-height:160px;">
+         <h3 class="text-center username">ABC <b class="mycolor1">{{r.name}}</b></h3>
+         <P class="text-center m-0">{{r.email}}</P>
+         <p class="text-center"><i class="fa-brands fa-square-facebook ic"></i>
+            <i class="fa-brands fa-square-twitter ic"></i>
+            <i class="fa-brands fa-square-youtube ic"></i>
+            <i class="fa-brands fa-linkedin ic"></i>
+            <i class="fa-brands fa-instagram ic"></i>
+          </p>
+          <div class="row g-0 py-1 ps-4">
+            <div class="col-2 ps-3">
+            <i class="fa-solid fa-circle-user"></i> Name
+            </div>
+            <div class="col-10">
+              Astha Gautam
+            </div>
+            <div class="row g-0 py-1 ">
+            <div class="col-sm-2 ps-3">
+             <i class="fa-solid fa-phone"></i> Mob. No. 
+            </div>
+            <div class="col-10">
+              9369520683
+            </div>
+            <div class="row g-0 py-1 ">
+            <div class="col-2 ps-3">
+            <i class="fa-solid fa-envelope"></i> Email
+            </div>
+            <div class="col-10">
+              abc@gmail.com
+            </div>
+            <div class="row g-0 py-1 ">
+            <div class="col-2 ps-3">
+            <i class="fa-solid fa-book-bookmark"></i> Batch
+            </div>
+            <div class="col-10">
+              Computer Science
+            </div>
+           
+            
+          </div>
+        </div>
+       </div>
+     </div>
+   </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,206 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+    
+    <style>
+    .bg-mycolor1
+    {
+        background: #f50057;
+    }
+    .bg-mycolor2
+    {
+        background: #6a1b9a;
+    }
+    .text-mycolor1
+    {
+        color: #f50057;
+    }
+    .text-mycolor2
+    {
+        color: #6a1b9a ;
+    }
+    .ic
+    {
+        color: #f50057;
+        height: 28px;
+        width: 28px;
+        text-align: center;
+        line-height: 28px;
+        border: 1px solid #f50057;
+        transition: .4s;
+    }
+    .ic:hover
+    {
+       transform:translateY(-5px);
+       transition: .1s;
+       background: #f50057;
+       color: white;
+    }
+    #menu
+    {
+        background: transparent !important;
+    }
+    #menu ul li a
+    {
+       color: white !important;
+    }
+   
+    .txt
+    {
+      height: 50px;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 4px solid #f50057 !important;
+    }
+    .ta
+    {
+      height: 80px;
+      border-radius: 0px !important;
+      margin-bottom: 4%;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: 4px solid #f50057 !important;
+    }
+   .footer
+   {
+    background: rgba(0, 0, 0, .8);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    min-height: 50px;
+   }
+   #verticalmenu ul li
+   {
+    list-style-type: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+   }
+   #verticalmenu ul li a
+   {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+   }
+   
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!--start header-->
+    <div class="row header ">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-12 pt-3">
+            <div class="row ">
+                <div class="col-sm-2">
+                    <div class="fs-2">Smart<b class="text-mycolor1">Study
+                      <i class="fa-solid fa-graduation-cap"></i>
+                    </b> </div>
+                </div>
+                <div class="col-sm-3"> 
+                    <i class="fa-solid fa-envelope ic me-1"></i> <b>Mail Us <br></b>
+                     <p class="text-mycolor1 me-1">asthagautamastha@gmail.com</p>
+                </div>
+                <div class="col-sm-2">
+                <i class="fa-solid fa-phone ic ms-2"></i> <b>Contact Us</b><br>
+                    <p class="text-mycolor1 ms-2"> +91 9369520683</p> 
+                </div>
+                <div class="col-sm-2 pt-2">
+                   <i class="fa-brands fa-instagram ic"></i> 
+                   <i class="fa-brands fa-facebook ic"></i> 
+                   <i class="fa-brands fa-whatsapp ic"></i>
+                   
+                    <!--media logo   .c-->
+                </div>
+                <div class="col-sm-3 p-2">
+                 {% if request.session.email %}
+                  <img src="/{{ request.session.userpic}}" class="img-thumbnail rounded-circle" style="height: 60px; width: 60px;">
+                  <b>{{ request.session.name }}</b>
+                  {{ request.session.email}}
+                  {{ request.session.batch}}
+                  {% else %}
+                  <img src="{% static 'images/user.png' %}" class="img-thumbnail rounded-circle" style="height: 40px; width: 40px;">
+                  <b>guest@gmail.com</b>
+                  {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+      <!-- vertical start menu-->
+      <div class="row bg-mycolor2">
+        <div class="col-sm-12">
+          <a class="text-light fs-3" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  <i class="fa-solid fa-bars"></i> 
+</a>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel"><b>Menu</b></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-mycolor1 " id="verticalmenu">
+    <ul>
+      <li>
+        <a href="/student/dashboard/"><i class="fa-solid fa-house"></i>Dashboard</a>
+      </li>
+       
+      <li>
+        <a href="/student/lecturecat/"><i class="fa-solid fa-layer-group"></i></i> video by  Category</a>
+      </li>
+
+      <li>
+        <a href="/student/lectures/"><i class="fa-solid fa-image"></i> Lectures</a>
+      </li>
+      
+      <li>
+        <a href="/student/task/"><i class="fa-solid fa-book"></i> Our Task</a>
+      </li>
+      <li>
+        <a href="/student/enotes/"><i class="fa-solid fa-book"></i>  E-Notes</a>
+      </li>
+      <li>
+        <a href="/student/softwarekit/"><i class="fa-solid fa-download"></i> Software Kit</a>
+      </li>
+      <li>
+        <a href="/student/profile/"><i class="fa-solid fa-user"></i>  My Profile</a>
+      </li>
+      <li>
+        <a href="/student/signout/"><i class="fa-solid fa-right-from-bracket"></i> Log Out</a>
+      </li>
+     
+    </ul>
+    
+  </div>
+</div>
+        </div>
+      </div>
+    <!-- vertical end menu -->
+
+     <div class="row content">
+        <div class="col-sm-12" style="min-height: 500px;">
+           
+    {%  block  content %}
+    
+    {% endblock %}
+
+        </div>
+     </div>
+   
+ <div class="row footer">
+    <div class="col-sm-6">
+        &copy; Techpile Technology Private Limited
+    </div>
+    <div class="col-sm-6">
+        Designed and Developed by Er.Astha Gautam
+    </div>
+ </div>
+
+  <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+</body>
+</html>
+ 

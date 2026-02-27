@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .lic
+    {
+        height: 55px;
+        width: 55px;
+        text-align: center;
+        line-height: 65px;
+    }
+    .btn1
+    {
+       height: 55px !important;
+    }
+</style>
+
+<div class="row heading">
+    <div class="text-center fs-3">Sign<b>In <i class=" fa-solid fa-key fa-sping lic"></i></b> 
+         <hr class="w-25 mx-auto">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quae repellat
+    </div> 
+</div>
+<!--heading end-->
+<div class="row">
+    <div class="col-sm-6 mx-auto mt-3 ">
+        <form method="post">
+            {% csrf_token %}
+        USERID :
+        <div class="input-group mb-3 ">
+            <i class="input-group-text lic bg-mycolor2 text-light">
+                <i class="fa-solid fa-user"></i>
+            </i>
+            <input type="email" name="email" class="form-control" required placeholder="USERID..">
+        </div>
+       Password :
+      <div class="input-group mb-3">
+       <i class="input-group-text lic bg-mycolor2 text-light">
+          <i class="fa-solid fa-key "></i>
+       </i>
+     <input type="password" name="passwd" class="form-control" required placeholder="Password">
+     </div>
+     <input type="submit" value="LOGIN"
+     class="form-control bg-mycolor2 text-light btn1" >
+      </form>
+    </div>
+    </div>
+{% endblock %} 

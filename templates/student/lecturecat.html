@@ -1,0 +1,36 @@
+{% extends 'student_base.html' %}
+{% load static %}
+
+{% block content %}
+
+{%  if not request.session.email %}
+<script>
+alert("You have to login first");location.href="/login/"
+</script>
+{% endif %}
+<div class="row heading">
+    <div class="text-center fs-3">Lacture<b>Category<i class="fa-solid fa-layer-group"></i></b> 
+         <hr class="w-25 mx-auto">✅ Career Guidance & Mentorship<br>
+Access to career advice, resume reviews,
+   
+    </div> 
+</div>
+<!--  heading end-->
+<div class=" row mt-5">
+    <div class="col-sm-10 bg-light mx-auto">
+        <div class="row">
+            {% for r in categories %}
+            <!--start category-->
+            <div class="col-sm-3 p-1 ">
+                <div class="card shadow-lg p-2 mb-3 border-0  position:relative;">
+                    <span class="position-absolute top-0 start-50 translate-middle btn text-light fs-5 bg-mycolor2">{{r.title}}</span>
+                  <a href="/student/lectures?cid={{r.id}}"> <img class="card-img-top" src="../../{{r.picture}}"></a> 
+                </div>
+            </div>
+             <!--end  category-->
+             {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
